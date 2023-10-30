@@ -202,7 +202,7 @@
  For example, the following URL uses the type attribute to notify Google Earth that it should attempt to load the file, even though the file extension is .php:
  
      <a href="myserver.com/cgi-bin/generate-kml.php#placemark123"
-     type="application/vnd.google-earth.kml+xml">
+     type="application/vnd.google-earth.kml+xml"/>
  */
 @property (strong, nonatomic) NSString *descriptionValue;
 

@@ -12,7 +12,7 @@
 #import "KMLRoot.h"
 #import "KMLAbstractContainer.h"
 #import "KMLPlacemark.h"
-#import "TBXML.h"
+#import <IBTBXML/TBXML.h>
 
 @implementation KMLParser
 

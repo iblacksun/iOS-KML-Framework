@@ -1,6 +1,6 @@
 Pod::Spec.new do |s|
   s.name         = "iOS-KML-Framework"
-  s.version      = "0.0.2"
+  s.version      = "0.0.3"
   s.summary      = "The iOS framework for parsing/generating KML files."
   s.description  = <<-DESC
                    This is a iOS framework for parsing/generating KML files.
@@ -13,10 +13,10 @@ Pod::Spec.new do |s|
   s.source       = { :git => "https://github.com/Pierre-Loup/iOS-KML-Framework.git", :tag => s.version.to_s }
 
   s.platform     = :ios
-  s.ios.deployment_target = '6.0'
-  s.requires_arc = true
+  s.ios.deployment_target = '13.0'
 
   s.source_files = 'KML'
   s.ios.framework = 'UIKit'  
-  s.dependency 'TBXML', '~> 1.5'
+  s.dependency 'IBTBXML'
+  
 end
