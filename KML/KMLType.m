@@ -307,16 +307,20 @@
     
     NSDateFormatter *formatter = [[NSDateFormatter alloc] init];
     formatter.timeZone = [NSTimeZone timeZoneForSecondsFromGMT:0];
-
     // dateTime（YYYY-MM-DDThh:mm:ssZ）
     formatter.dateFormat = @"yyyy'-'MM'-'dd'T'HH':'mm':'ss'Z'";
     date = [formatter dateFromString:value];
     if (date) {
         return date;
     }
-    
+    //包含「上午/下午」的情形
+    formatter.dateFormat = @"yyyy'-'MM'-'dd'T'aaHH':'mm':'ss'Z'";
+    date = [formatter dateFromString:value];
+    if (date) {
+        return date;
+    }
     // dateTime（YYYY-MM-DDThh:mm:sszzzzzz）
-    if (value.length >= 22) {
+    if (value.length > 22) {
         formatter.dateFormat = @"yyyy'-'MM'-'dd'T'HH':'mm':'sszzzz";
         NSString *v = [value stringByReplacingOccurrencesOfString:@":" withString:@"" options:0 range:NSMakeRange(22, 1)];
         date = [formatter dateFromString:v];
